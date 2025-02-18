@@ -1,15 +1,12 @@
 const {
   GoogleGenerativeAI,
-  HarmCategory,
-  HarmBlockThreshold,
 } = require("@google/generative-ai");
 const readline = require("readline").createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
-const apiKey = 'AIzaSyDmRwljKLteI4bEvLnixIEtrzzkA2yM9Cs';
-const genAI = new GoogleGenerativeAI(apiKey);
+const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
 const model = genAI.getGenerativeModel({
   model: "gemini-2.0-flash-exp",

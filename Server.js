@@ -1,4 +1,5 @@
 const express = require('express')
+require('dotenv').config({ path: './.env' })
 const port = process.env.PORT || 8080;
 const nexchatbot = require('./config/nexchatbot');
 const cors = require('cors');
@@ -7,7 +8,6 @@ var corsOptions = {
     origin: "https://nexusmind-clone-32jd.vercel.app"
 };
 const app = express();
-
 //middlewares
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }));
